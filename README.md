@@ -65,3 +65,7 @@ Deploy as,
 ```
 java -jar target/demo-coins-0.0.1-SNAPSHOT.jar
 ```
+
+The application APIs will be available at `http://localhost:8080/coins/swagger-ui/index.html`.
+
+The H2 database console will be available at `http://localhost:8080/coins/h2-console`. The connection settings can be taken from `application.properties`.
