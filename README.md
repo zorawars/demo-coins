@@ -1,9 +1,13 @@
 # demo-coins: Hello world Bitcoin Payment API
 
+### References
+1. Bitcoin Developer Guide at https://developer.bitcoin.org/.
+
 ### Software and Tools
 1. Bitcoin Core 0.21.0. Download from https://bitcoin.org/en/download.
-2. JDK 11. The language level is set to Java 8 features.
-3. IntelliJ IDEA.
+2. Bitcoin RPC Client, https://github.com/Polve/bitcoin-rpc-client.
+3. JDK 11. The language level is set to Java 8 features.
+4. IntelliJ IDEA.
 
 ### Local Development
 #### Bitcoin Core
@@ -36,7 +40,9 @@ bitcoin-cli -regtest loadwallet "sender"
 
 Generate bitcoins to the `test-funds` wallet.
 ```
-bitcoin-cli -regtest generatetoaddress 1001 $(bitcoin-cli -regtest -rpcwallet=test-funds getnewaddress)
+NEW_ADDRESS=$(bitcoin-cli -regtest -rpcwallet=test-funds getnewaddress)
+bitcoin-cli -regtest generatetoaddress 1001 $NEW_ADDRESS
+unset NEW_ADDRESS
 ```
 
 Transfer bitcoins from `test-funds` to `receiver` wallet.

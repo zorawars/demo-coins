@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 /**
  * Convertor to transform repository artifacts to web resources.
  * <p>
- *     The example here is for Invoices.
+ * The example here is for Invoices.
  * </p>
  */
 @Component
